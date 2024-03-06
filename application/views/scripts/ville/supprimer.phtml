@@ -1,0 +1,12 @@
+Supprimer une ville
+<p>Etes-vous sur de vouloir supprimer la ville :
+<?php
+echo $this->escape($this->ville['nom'])."(id = ".$this->ville['id'].")";
+?>
+<form action="<?php echo $this->url(array('controller'=>'ville','action'=>'supprimer')); ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->ville['id']; ?>">
+        <input type="submit" name="supprimer" value="Oui">
+        <input type="submit" name="supprimer" value="Non">
+    </div>
+</form>

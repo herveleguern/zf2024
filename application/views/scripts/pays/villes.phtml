@@ -1,0 +1,18 @@
+<p>Les villes du pays</p>
+<p>
+<?php echo $this->nomDuPays; ?>
+</p>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Langue</th>
+    </tr>
+    <?php foreach ($this->lesVilles as $uneVille) : ?>
+        <tr>
+            <td><?php echo $uneVille->id; ?></td>
+            <td><?php echo $uneVille->nom; ?></td>
+            <td><?php echo $uneVille->langue; ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>

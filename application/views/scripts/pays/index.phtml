@@ -1,0 +1,20 @@
+<h2>Liste des pays</h2>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+    </tr>
+    <?php foreach ($this->lesPays as $unPays) : ?>
+        <tr>
+            <td><?php echo $unPays->id; ?></td>
+            <td><?php echo $unPays->nom; ?></td>
+            <td>
+                <a href="<?php
+                echo $this->url(array('controller' => 'pays',
+                    'action' => 'villes', 'id' => $unPays->id));
+                ?>">Voir les villes</a>
+            </td>
+
+        </tr>
+    <?php endforeach; ?>
+</table>

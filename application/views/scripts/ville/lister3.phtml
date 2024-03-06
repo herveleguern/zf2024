@@ -1,0 +1,16 @@
+<p>Requete SQL libre</p>
+<table border="1">
+    <tr>
+        <th>Langue</th>
+        <th>NbVilles</th>
+    </tr>
+    <?php foreach ($this->lesLignes as $cle=>$valeur) { ?>
+        <tr>
+            <td><?php echo $cle; ?></td>
+            <td><?php echo $valeur; ?></td>
+        </tr>
+
+        <?php
+    }
+    ?>
+</table>

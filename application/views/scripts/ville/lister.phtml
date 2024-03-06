@@ -1,0 +1,17 @@
+<p>Requete SQL libre</p>
+<?php var_dump($this->lesLignes); ?>
+<table border="1">
+    <tr>
+        <th>Langue</th>
+        <th>NbVilles</th>
+    </tr>
+    <?php foreach ($this->lesLignes as $uneLigne) { ?>
+        <tr>
+            <td><?php echo $uneLigne['langue']; ?></td>
+            <td><?php echo $uneLigne['nbVilles']; ?></td>
+        </tr>
+
+        <?php
+    }
+    ?>
+</table>

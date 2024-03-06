@@ -1,0 +1,42 @@
+<h2>Liste des villes</h2>
+<p><a href="<?php
+    echo $this->url(array('controller' => 'ville', 'action' => 'ajouter'));
+    ?>">Ajouter une ville</a>
+</p>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Langue</th>
+        <th>Pays</th>
+    </tr>
+    <?php foreach ($this->lesVilles as $uneVille) : ?>
+        <tr>
+            <td><?php echo $uneVille->id; ?></td>
+            <td><?php echo $uneVille->nom; ?></td>
+            <td><?php echo $uneVille->langue; ?></td>
+            <td><?php echo $uneVille->getNomPays(); ?></td>
+            <td>
+                <a href="<?php
+                echo $this->url(array('controller' => 'ville',
+                    'action' => 'modifier', 'id' => $uneVille->id));
+                ?>">Modifier</a>
+                <a href="<?php
+                echo $this->url(array('controller' => 'ville',
+                    'action' => 'supprimer', 'id' => $uneVille->id));
+                ?>">Supprimer</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<!--bandeau de navigation-->
+<br/>
+pages
+<br/>
+<?php
+$pages = $this->lesVilles->getPages();
+foreach ($pages->pagesInRange as $page) {
+    echo "<a href=?page=$page>$page</a>&nbsp;|&nbsp;";
+}
+
+?>

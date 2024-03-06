@@ -1,0 +1,22 @@
+<?php
+//Niveau 1	Tant qu’il y a des villes
+//Niveau 2	Tant que c’est des villes de meme langue 
+//importance du tri par langue
+$i = 0;
+//niveau 1
+while ($i < count($this->lesLignes)) {		
+    $langueCourante = $this->lesLignes[$i]['langue'];
+    $nbVilles = 0;
+    //niveau2
+    while ($i < count($this->lesLignes) && $this->lesLignes[$i]['langue'] == $langueCourante ) { 
+        //afficher le detail
+    echo $this->lesLignes[$i]['langue'] . " " 
+            . $this->lesLignes[$i]['nom']."<br/>";
+        $nbVilles++;
+        $i++;
+    } //fin TQ lignes meme langue
+
+        //afficher le cumul de la langue que l’on vient de « terminer »
+    echo " nombre de villes parlant ".$langueCourante." : ".$nbVilles."<br/><br/>";
+} // finTQ
+?>
